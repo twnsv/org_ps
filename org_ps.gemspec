@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.name        = "org_ps"
   spec.version     = OrgPs::VERSION
   spec.authors     = ["wen"]
-  spec.email       = ["alejet.larvata@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of OrgPs."
-  spec.description = "TODO: Description of OrgPs."
+  spec.email       = ["wen@larvata.tw"]
+  spec.homepage    = ""
+  spec.summary     = "Summary of OrgPs."
+  spec.description = "Description of OrgPs."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", "~> 5.2.4", ">= 5.2.4.1"
+  spec.add_dependency "rails", "~> 5.1.4"
 
-  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "mysql2", '0.5.2'
 end
