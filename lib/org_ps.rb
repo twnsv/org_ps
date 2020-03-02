@@ -3,6 +3,7 @@ module OrgPs
 
   mattr_accessor :org_class
   mattr_accessor :tree_node_class
+  mattr_accessor :user_class
 
   def self.org_class
     @@org_class.constantize
@@ -10,6 +11,10 @@ module OrgPs
 
   def self.tree_node_class
     @@tree_node_class.constantize
+  end
+
+  def self.user_class
+    @@user_class.contantize
   end
 
   require 'org_ps/trunk/linkable'
