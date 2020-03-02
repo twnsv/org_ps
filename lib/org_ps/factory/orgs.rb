@@ -2,7 +2,7 @@ module OrgPs
   module Factory
     class Orgs
       class << self
-        def create_company(gui_number, name, office_address)
+        def create_company(gui_number, name)
           OrgPs.org_class.com.enabled.create(
             gui_number: gui_number,
             abbrev_name: name,
