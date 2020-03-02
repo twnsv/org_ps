@@ -10,7 +10,13 @@ module OrgPs
         }
       end
 
-      def add_org_node()
+      def add_org_node(parent_node, typing, name, code)
+        org = OrgPs::Factory::Orgs.create_org(typing, name, code)
+        node = OrgPs::Factory::Nodes.create_child(parent_node, org)
+        {
+          organization: org,
+          tree_node: node
+        }
       end
     end
   end
