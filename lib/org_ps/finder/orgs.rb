@@ -1,10 +1,14 @@
 module OrgPs
   module Finder
     class Orgs
-      attr_reader :company_node, :typings
+      attr_reader :company_node
 
       def intitialze(gui_number)
         @company_node = OrgPs.tree_node_class.roots.includes(:nodeable, :children).find_by_code(gui_number)
+      end
+
+      def departments()
+        company_node.children.dept.enabled.includes(:nodeable)
       end
 
       class << self
