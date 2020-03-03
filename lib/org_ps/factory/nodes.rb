@@ -3,7 +3,7 @@ module OrgPs
     class Nodes
       class << self
         def create_root(org)
-          OrgPs.tree_node_class.com.enabled.create(nodeable: org, org.gui_number, name: org.abbrev_name)
+          OrgPs.tree_node_class.com.enabled.create(nodeable: org, code: org.gui_number, name: org.abbrev_name)
         end
 
         def create_child(parent_node, org)
