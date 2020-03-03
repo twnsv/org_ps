@@ -20,5 +20,7 @@ module OrgPs
   require 'org_ps/factory/nodes'
   require 'org_ps/factory/orgs'
   require 'org_ps/trunk/growth'
+  require 'org_ps/finder/orgs'
+  require 'org_ps/finder/users'
   require 'org_ps/service/org_nodes'
 end
