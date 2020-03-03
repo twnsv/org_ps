@@ -1,22 +1,26 @@
 module OrgPs
   module Finder
     class Orgs
-      attr_reader :company_node
+      attr_reader :company_node, :typings
 
       def intitialze(gui_number)
         @company_node = OrgPs.tree_node_class.roots.includes(:nodeable, :children).find_by_code(gui_number)
       end
 
-      def child_org_node(typing, code)
-        org_node = company_code.children&.includes(:nodeable).send(typing)&.find_by_code(code)
+      class << self
+        def add_typing_org_node(typing)
+          define_method "#{typing}_org_node" do |*arg|
+            org_node = company_code.children&.includes(:nodeable).send(typing)&.find_by_code(arg[0].to_s)
 
-        {
-          organization: org_node&.nodeable,
-          tree_node: {
-            node: org_node,
-            parent: company_node
-          }
-        }
+            {
+              organization: org_node&.nodeable,
+              tree_node: {
+                node: org_node,
+                parent: company_node
+              }
+            }
+            end
+        end
       end
     end
   end
