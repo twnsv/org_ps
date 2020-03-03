@@ -8,6 +8,14 @@ module OrgPs
       end
 
       def manager_users
+        all_manager_users
+      end
+
+      def manager_users_in_department(departmend_code)
+        all_manager_users[department_code.to_sym]
+      end
+
+      def all_manager_users
         manager_nodes = company_node.find_all_by_generation(2).manager.includes(:nodeable, :parent, :children)
 
         {}.tap do |nodes_hash|
