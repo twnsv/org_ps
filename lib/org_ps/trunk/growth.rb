@@ -2,11 +2,11 @@ module OrgPs
   module Trunk
     class Growth
       class << self
-        def create_company_node(gui_number, name, office_address)
-          company = OrgPs::Factory::Orgs.create_company(gui_number, name, office_address)
-          root = OrgPs::Factory::Nodes.create_root(company)
+        def create_org_root(gui_number, name)
+          org = OrgPs::Factory::Orgs.create_company(gui_number, name)
+          root = OrgPs::Factory::Nodes.create_root(org)
           {
-            organization: company,
+            organization: org,
             tree_node: root
           }
         end
