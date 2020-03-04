@@ -5,6 +5,7 @@ module OrgPs
         def create_company(gui_number, name)
           OrgPs.org_class.com.enabled.create(
             gui_number: gui_number,
+            name: name
             abbrev_name: name,
             full_name: name,
             code: "company_#{gui_number}"
